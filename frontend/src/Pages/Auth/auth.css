@@ -1,0 +1,151 @@
+.glassCard {
+    background: rgba(255, 255, 255, 0.055);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 22px;
+    padding: 36px 32px;
+    backdrop-filter: blur(18px);
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.5);
+}
+
+.authLogoBox {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #7c6cff, #5a4bdb);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 24px rgba(124, 108, 255, 0.4);
+    margin: 0 auto 18px;
+}
+
+.authTitle {
+    color: #f4f4fa;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 4px;
+}
+
+.authSubtitle {
+    color: #83839a;
+    font-size: 13px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.authLabel {
+    color: #b8b8cc;
+    font-size: 12px;
+    margin-bottom: 6px;
+}
+
+.authInput {
+    background: rgba(255, 255, 255, 0.07) !important;
+    border: 1px solid rgba(255, 255, 255, 0.14) !important;
+    border-radius: 11px !important;
+    padding: 11px 14px !important;
+    color: #e8e8f0 !important;
+    font-size: 14px !important;
+}
+
+.authInput:focus {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-color: rgba(124, 108, 255, 0.6) !important;
+    box-shadow: 0 0 0 3px rgba(124, 108, 255, 0.15) !important;
+    color: #fff !important;
+}
+
+.authInput::placeholder {
+    color: #6b6b80;
+}
+
+.authLink {
+    color: #9d92ff;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.authLink:hover {
+    color: #c9c3ff;
+    text-decoration: underline;
+}
+
+.authLinkBold {
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.authFooterText {
+    color: #83839a;
+    font-size: 13px;
+}
+
+.authBtn {
+    background: linear-gradient(135deg, #8d7fff, #5a4bdb) !important;
+    border: none !important;
+    color: #fff !important;
+    padding: 12px !important;
+    border-radius: 11px !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    box-shadow: 0 10px 26px rgba(124, 108, 255, 0.4);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.authBtn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 14px 32px rgba(124, 108, 255, 0.5);
+}
+
+.authBtn:disabled {
+    opacity: 0.7;
+}
+
+.lnk {
+    text-decoration: none;
+}
+.passwordWrapper {
+    position: relative;
+}
+
+.passwordToggle {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9a9ab0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.passwordToggle:hover {
+    color: #e8e8f0;
+}
+
+.matchTick {
+    cursor: default;
+}
+
+.strengthWrapper {
+    margin-top: 8px;
+}
+
+.strengthBar {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 4px;
+}
+
+.strengthSegment {
+    flex: 1;
+    height: 4px;
+    border-radius: 2px;
+    transition: background 0.2s ease;
+}
+
+.strengthLabel {
+    font-size: 11px;
+    font-weight: 500;
+}

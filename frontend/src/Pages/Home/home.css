@@ -1,0 +1,694 @@
+.filterRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    margin: 0 12px 20px;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.summaryRow {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin: 0 12px 20px;
+}
+
+.summaryCard {
+    flex: 1;
+    min-width: 160px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 16px 20px;
+    backdrop-filter: blur(10px);
+}
+
+.summaryCard .label {
+    color: #9a9ab0;
+    font-size: 12px;
+    margin-bottom: 6px;
+}
+
+.summaryCard .value {
+    color: #f2f2f7;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.summaryCard.income {
+    background: rgba(99, 201, 138, 0.08);
+    border-color: rgba(99, 201, 138, 0.25);
+}
+.summaryCard.income .value {
+    color: #c9f2d6;
+}
+
+.summaryCard.expense {
+    background: rgba(224, 110, 110, 0.08);
+    border-color: rgba(224, 110, 110, 0.25);
+}
+.summaryCard.expense .value {
+    color: #fbd0d0;
+}
+
+.transactionCard {
+    background: rgba(255, 255, 255, 0.045);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 14px 18px;
+    margin: 0 12px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    backdrop-filter: blur(10px);
+    transition: border-color 0.2s ease, transform 0.15s ease;
+}
+
+.transactionCard:hover {
+    border-color: rgba(255, 255, 255, 0.18);
+    transform: translateY(-1px);
+}
+
+.transactionLeft {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.transactionIcon {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.transactionIcon.credit {
+    background: rgba(99, 201, 138, 0.15);
+    color: #8fd6a8;
+}
+
+.transactionIcon.expense {
+    background: rgba(224, 110, 110, 0.15);
+    color: #f0a5a5;
+}
+
+.transactionTitle {
+    color: #f2f2f7;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.transactionMeta {
+    color: #83839a;
+    font-size: 12px;
+    margin-top: 2px;
+}
+
+.transactionAmount {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.transactionAmount.credit {
+    color: #8fd6a8;
+}
+
+.transactionAmount.expense {
+    color: #f0a5a5;
+}
+
+.transactionActions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #9a9ab0;
+}
+
+.transactionActions svg:hover {
+    color: #fff;
+    cursor: pointer;
+}
+
+.icons-handle {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+}
+
+.date {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.containerBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    width: 100%;
+    margin-left: 20px;
+}
+
+.mobileBtn {
+    display: none !important;
+}
+
+.iconBtnBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.iconActive {
+    background-color: #fff;
+    color: #111;
+    border-radius: 6px;
+}
+
+.iconDeactive {
+    background-color: transparent;
+    color: #9a9ab0;
+}
+
+.emptyState {
+    text-align: center;
+    color: #83839a;
+    padding: 40px 20px;
+    margin: 0 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px dashed rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+}
+
+@media only screen and (max-width: 600px) {
+    .filterRow {
+        padding: 14px !important;
+        margin: 0 6px 16px;
+        gap: 10px;
+    }
+    .summaryRow {
+        margin: 0 6px 16px;
+    }
+    .transactionCard {
+        margin: 0 6px 8px;
+    }
+    .addNew {
+        display: none !important;
+    }
+    .mobileBtn {
+        display: inline-block !important;
+    }
+    .iconBtnBox {
+        border: 0px;
+    }
+    .date {
+        flex-direction: column;
+    }
+    .date .form-group {
+        width: 45%;
+    }
+    .containerBtn {
+        margin-left: 0px !important;
+    }
+}
+.modal-content {
+    background: #0b0c14 !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 18px !important;
+    backdrop-filter: blur(20px);
+}
+
+.modal-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    padding: 20px 24px !important;
+}
+
+.modal-header .modal-title {
+    color: #f2f2f7 !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+}
+
+.modal-header .btn-close {
+    filter: invert(1) grayscale(100%) brightness(2);
+    opacity: 0.7;
+}
+
+.modal-body {
+    padding: 20px 24px !important;
+}
+
+.modal-body .form-label {
+    color: #b8b8cc !important;
+    font-size: 12px !important;
+    margin-bottom: 6px !important;
+}
+
+.modal-body .form-control,
+.modal-body .form-select {
+    background: rgba(255, 255, 255, 0.07) !important;
+    border: 1px solid rgba(255, 255, 255, 0.14) !important;
+    border-radius: 10px !important;
+    padding: 10px 14px !important;
+    color: #e8e8f0 !important;
+    font-size: 14px !important;
+}
+
+.modal-body .form-control:focus,
+.modal-body .form-select:focus {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-color: rgba(124, 108, 255, 0.6) !important;
+    box-shadow: 0 0 0 3px rgba(124, 108, 255, 0.15) !important;
+    color: #fff !important;
+}
+
+.modal-body .form-control::placeholder {
+    color: #6b6b80;
+}
+
+.modal-body .form-select option {
+    background: #0b0c14;
+    color: #e8e8f0;
+}
+
+.modal-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+    padding: 16px 24px !important;
+}
+
+.modal-footer .btn-secondary {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    color: #e8e8f0 !important;
+    border-radius: 9px !important;
+}
+
+.modal-footer .btn-primary {
+    background: linear-gradient(135deg, #8d7fff, #5a4bdb) !important;
+    border: none !important;
+    border-radius: 9px !important;
+    box-shadow: 0 8px 20px rgba(124, 108, 255, 0.35);
+}
+
+.modal-backdrop.show {
+    opacity: 0.75 !important;
+    background-color: #000 !important;
+}
+.analyticsCard {
+    background: rgba(255, 255, 255, 0.045);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 16px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.analyticsCardHeader {
+    background: rgba(255, 255, 255, 0.05);
+    color: #f2f2f7;
+    font-weight: 600;
+    font-size: 13px;
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.analyticsCardBody {
+    padding: 16px;
+}
+
+.analyticsIncomeText {
+    color: #8fd6a8 !important;
+    font-size: 14px;
+}
+
+.analyticsExpenseText {
+    color: #f0a5a5 !important;
+    font-size: 14px;
+}
+
+.analyticsEmptyText {
+    color: #6b6b80;
+    font-size: 13px;
+}
+.heroRow {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin: 0 12px 16px;
+}
+
+.balanceCard {
+    flex: 1.4;
+    min-width: 260px;
+    background: linear-gradient(135deg, rgba(124, 108, 255, 0.15), rgba(90, 75, 219, 0.08));
+    border: 1px solid rgba(124, 108, 255, 0.25);
+    border-radius: 18px;
+    padding: 22px 24px;
+}
+
+.balanceLabel {
+    color: #c9c3ff;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.balanceValue {
+    color: #f4f4fa;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.balanceSub {
+    color: #9a9ab0;
+    font-size: 12px;
+    margin: 6px 0 18px;
+}
+
+.balanceActions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.primaryActionBtn {
+    background: linear-gradient(135deg, #8d7fff, #5a4bdb) !important;
+    border: none !important;
+    border-radius: 10px !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    padding: 10px 18px !important;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.secondaryActionBtn {
+    background: rgba(255, 255, 255, 0.07) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-radius: 10px !important;
+    color: #e8e8f0 !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    padding: 10px 18px !important;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.miniStatCard {
+    flex: 1;
+    min-width: 180px;
+    border-radius: 18px;
+    padding: 18px 20px;
+}
+
+.miniStatCard.income {
+    background: rgba(99, 201, 138, 0.07);
+    border: 1px solid rgba(99, 201, 138, 0.22);
+}
+
+.miniStatCard.expense {
+    background: rgba(224, 110, 110, 0.07);
+    border: 1px solid rgba(224, 110, 110, 0.22);
+}
+
+.miniStatTop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.miniStatIcon {
+    font-size: 16px;
+}
+
+.miniStatBadge {
+    color: #83839a;
+    font-size: 11px;
+}
+
+.miniStatLabel {
+    color: #9a9ab0;
+    font-size: 12px;
+    margin-bottom: 6px;
+}
+
+.miniStatValue {
+    color: #f4f4fa;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.income .miniStatValue {
+    color: #c9f2d6;
+}
+
+.expense .miniStatValue {
+    color: #fbd0d0;
+}
+
+.miniStatFoot {
+    color: #83839a;
+    font-size: 11px;
+    margin-top: 8px;
+}
+
+.statsRow {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin: 0 12px 20px;
+}
+
+.statsCard {
+    flex: 1;
+    min-width: 220px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 18px;
+    padding: 18px 20px;
+    backdrop-filter: blur(10px);
+}
+
+.statsCard[onClick] {
+    cursor: pointer;
+}
+
+.statsCardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #f2f2f7;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 14px;
+}
+
+.statsCardHeaderRight {
+    color: #83839a;
+    font-size: 11px;
+    font-weight: 400;
+}
+
+.statsEmptyText {
+    color: #6b6b80;
+    font-size: 12px;
+}
+
+.budgetPercent {
+    color: #f4f4fa;
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.budgetBarTrack {
+    background: rgba(255, 255, 255, 0.07);
+    border-radius: 6px;
+    height: 8px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.budgetBarFill {
+    background: linear-gradient(90deg, #7c6cff, #a78bfa);
+    height: 100%;
+    border-radius: 6px;
+    transition: width 0.4s ease;
+}
+
+.budgetFoot {
+    color: #83839a;
+    font-size: 11px;
+}
+
+.categoryBarRow {
+    margin-bottom: 12px;
+}
+
+.categoryBarLabel {
+    display: flex;
+    justify-content: space-between;
+    color: #c8c8d6;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.categoryBarTrack {
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 4px;
+    height: 6px;
+    overflow: hidden;
+}
+
+.categoryBarFill {
+    background: linear-gradient(90deg, #7c6cff, #a78bfa);
+    height: 100%;
+    border-radius: 4px;
+}
+
+.weekBarRow {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: 80px;
+    padding-top: 10px;
+}
+
+.weekBarCol {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    flex: 1;
+}
+
+.weekBarFill {
+    width: 8px;
+    background: linear-gradient(180deg, #a78bfa, #7c6cff);
+    border-radius: 4px;
+    min-height: 2px;
+}
+
+.weekBarLabel {
+    color: #6b6b80;
+    font-size: 10px;
+}
+
+.resetBtn {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-radius: 9px !important;
+}
+
+.recentHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 20px 12px 14px;
+}
+
+.recentTitle {
+    color: #f2f2f7;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.recentSub {
+    color: #83839a;
+    font-size: 11px;
+}
+
+.recentControls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.pillGroup {
+    display: flex;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 20px;
+    padding: 3px;
+}
+
+.pill {
+    color: #83839a;
+    font-size: 12px;
+    padding: 6px 14px;
+    border-radius: 16px;
+    cursor: pointer;
+}
+
+.pillActive {
+    background: rgba(124, 108, 255, 0.25);
+    color: #c9c3ff;
+    font-weight: 600;
+}
+
+.addNewBtn {
+    background: linear-gradient(135deg, #8d7fff, #5a4bdb) !important;
+    border: none !important;
+    border-radius: 9px !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.quickAddRow {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.quickAddBtn {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.06) !important;
+    border: 1px solid rgba(255, 255, 255, 0.14) !important;
+    border-radius: 10px !important;
+    color: #e8e8f0 !important;
+    font-size: 12px !important;
+    padding: 9px 12px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    cursor: pointer;
+    margin: 0;
+}
+
+.quickAddBtn.listening {
+    background: rgba(224, 110, 110, 0.15) !important;
+    border-color: rgba(224, 110, 110, 0.4) !important;
+    color: #f0a5a5 !important;
+}
+
+.quickAddUploadBtn {
+    text-align: center;
+}
